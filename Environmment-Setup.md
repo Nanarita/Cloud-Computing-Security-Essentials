@@ -51,7 +51,7 @@ Prerequisites
   ```powershell
   oathtool --version
   ```
-- Evidence: <img width="518" height="64" alt="4  OpenSSL" src="https://github.com/user-attachments/assets/3cf291d3-6253-4abe-9841-17790375179c" />
+- Evidence: <img width="657" height="157" alt="4  Oathtool" src="https://github.com/user-attachments/assets/3edf520a-c806-40a4-8954-7afb1ece490e" />
 
 5) Start and stop the lab environment
 - Install LocalStack (for AWS service emulation) using pip or Docker:
@@ -71,7 +71,7 @@ Prerequisites
   kubectl cluster-info --context kind-ccse
   kubectl get nodes
   ```
-- Evidence: <img width="518" height="64" alt="4  OpenSSL" src="https://github.com/user-attachments/assets/0309241f-191b-48f1-83a9-e899ae4698bf" />
+- Evidence: <img width="519" height="81" alt="5  Kubernetes cluster KIND" src="https://github.com/user-attachments/assets/5c67ef58-0098-4e58-915a-2e7a62ed775a" />
 
 6) One-time / Final checks
 - Ensure all CLIs are on `PATH` and show expected versions:
