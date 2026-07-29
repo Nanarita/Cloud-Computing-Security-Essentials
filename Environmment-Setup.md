@@ -32,25 +32,26 @@ Prerequisites
   chmod +x ./kind && sudo mv ./kind /usr/local/bin/kind
   kind --version
   ```
+- Evidence: <img width="199" height="63" alt="3  Kind" src="https://github.com/user-attachments/assets/1e2a20dc-661d-4cf8-91de-bdacf2cba18c" />
+
 - Download the kubectl binary for Windows and place it in a directory on your PATH.
 - Verify kubectl:
   ```powershell
   kubectl version --client
   ```
-- Evidence: [Evidence/Kubectl.PNG](Evidence/Kubectl.PNG)
+- Evidence: <img width="266" height="73" alt="3  Kubectl" src="https://github.com/user-attachments/assets/cb20e6e7-e3c3-449b-9e98-2e365dbbec1d" />
 
 4) Install OpenSSL and oathtool
 - OpenSSL (for certs): install it from the official Windows build or Git for Windows bundle, then verify:
   ```powershell
   openssl version
   ```
-- Evidence: [Evidence/Kind.PNG](Evidence/Kind.PNG)
+- Evidence: <img width="518" height="64" alt="4  OpenSSL" src="https://github.com/user-attachments/assets/cee6d5e8-f8ab-44d2-b053-6f4565f995ef" />
 
-5) Create a local Kubernetes cluster with kind
   ```powershell
   oathtool --version
   ```
-- Evidence: [Evidence/Kubernetes cluster KIND.PNG](Evidence/Kubernetes%20cluster%20KIND.PNG)
+- Evidence: <img width="518" height="64" alt="4  OpenSSL" src="https://github.com/user-attachments/assets/3cf291d3-6253-4abe-9841-17790375179c" />
 
 5) Start and stop the lab environment
 - Install LocalStack (for AWS service emulation) using pip or Docker:
@@ -70,11 +71,13 @@ Prerequisites
   kubectl cluster-info --context kind-ccse
   kubectl get nodes
   ```
-- Evidence: [Evidence/OpenSSL.PNG](Evidence/OpenSSL.PNG)
-- Evidence: [Evidence/Oathtool.PNG](Evidence/Oathtool.PNG)
+- Evidence: <img width="518" height="64" alt="4  OpenSSL" src="https://github.com/user-attachments/assets/0309241f-191b-48f1-83a9-e899ae4698bf" />
 
 6) One-time / Final checks
 - Ensure all CLIs are on `PATH` and show expected versions:
   ```powershell
-  docker --version; kind --version; kubectl version --client; aws --version; localstack --version
+  EP='--endpoint-url=http://localhost:4566'
+  aws $EP sts get-caller-identity
   ```
+- Evidence: <img width="384" height="126" alt="6  One time" src="https://github.com/user-attachments/assets/5edda029-ccc6-4ca3-93ab-e4d88b769aa4" />
+
