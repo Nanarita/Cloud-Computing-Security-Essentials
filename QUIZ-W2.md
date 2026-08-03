@@ -5,13 +5,12 @@
 **TOTAL POINTS: 14/30**
 
 1. A collection of IAM users is called:
-*
-0/1
-IAM Policy
- 
-IAM Group
-IAM Role
-S3 Bucket
+
+*0/1
+-IAM Policy* 
+-IAM Group
+-IAM Role
+-S3 Bucket
 
 **Correct answer:**IAM Group
  
