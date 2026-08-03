@@ -1,4 +1,3 @@
-# IKB42603 Cloud Computing Security Essentials
 ## Lab 1 Comprehensive Report: Cloud Account Security, Identity & Access Management (LocalStack IAM & Kubernetes RBAC)
 
 **Course:** IKB42603 Cloud Computing Security Essentials  
@@ -61,6 +60,8 @@ aws configure set region us-east-1
 # 5. Verify operating caller identity
 aws --endpoint-url=http://localhost:4566 sts get-caller-identity
 ```
+#### Screenshot Deliverable (Week 1 - Environment Setup):
+<img width="421" height="260" alt="Environment Setup (2)" src="https://github.com/user-attachments/assets/cad53ae7-95aa-49c2-9c0b-b7ac0518f7a8" />
 
 #### Output (`sts get-caller-identity`):
 ```json
@@ -78,11 +79,11 @@ aws --endpoint-url=http://localhost:4566 sts get-caller-identity
 
 | Concept | AWS Term | Purpose (in own words) |
 |---|---|---|
-| **All-powerful owner** | Root user | The primary account owner created upon AWS account registration. Has complete, unrestricted control over all resources, billing, and global settings. Must be secured with MFA and avoided for daily operations. |
-| **Human/app identity** | IAM User | An identity created within AWS that represents a specific person or application. Granted permanent, long-term credentials (password, access key pair). |
-| **Permission bundle** | IAM Policy | A formal JSON document that defines explicit permissions (`Effect`, `Action`, `Resource`, `Condition`). Specifies what an identity is allowed or denied to do. |
-| **Collection of users** | IAM Group | A container/collection used to group IAM users together and attach policies centrally, simplifying access management at scale. |
-| **Temporary identity** | IAM Role | An identity with specific permissions that can be assumed temporarily by trusted users, applications, or AWS services without using long-term access keys. |
+| **All-powerful owner** | Root user | The primary account owner created upon AWS registration has complete, unrestricted control over all resources, billing, and settings, meaning it must be protected with MFA and avoided for daily tasks. |
+| **Human/app identity** | IAM User | An AWS account made for a specific person or app that comes with permanent, long-term login details like a password or access keys.. |
+| **Permission bundle** | IAM Policy | A structured JSON file that outlines exact permissions such as what actions are allowed or denied on specific resources to control what an identity can and cannot do. |
+| **Collection of users** | IAM Group | A folder-like collection used to group IAM users together so you can apply permissions to all of them at once, making it much easier to manage access for large groups of people. |
+| **Temporary identity** | IAM Role | A temporary identity with specific permissions that trusted users, apps, or AWS services can use for a short time without needing permanent login keys. |
 
 ---
 
@@ -111,7 +112,7 @@ aws $EP iam get-group --group-name Admins
 ```
 
 #### Screenshot Deliverable (Week 1 - Task 2):
-![Task 2 Terminal Output](Lab1/Week1/Lab1-Task2.PNG)
+<img width="927" height="627" alt="image" src="https://github.com/user-attachments/assets/8a46b49c-2916-4c24-914b-e5f0fb4f904f" />
 
 #### Terminal JSON Output:
 ```json
@@ -120,7 +121,7 @@ aws $EP iam get-group --group-name Admins
         {
             "Path": "/",
             "UserName": "CloudAdmin_Nana",
-            "UserId": "AIDAQAAAAAAAGXBG2OS4E",
+            "UserId": "XXXXXXXXXXXXXXXXXXXXX",
             "Arn": "arn:aws:iam::000000000000:user/CloudAdmin_Nana",
             "CreateDate": "2026-07-29T12:09:17.429529+00:00"
         }
@@ -128,7 +129,7 @@ aws $EP iam get-group --group-name Admins
     "Group": {
         "Path": "/",
         "GroupName": "Admins",
-        "GroupId": "AGPAQAAAAAAAMBZHDXHLF",
+        "GroupId": "XXXXXXXXXXXXXXXXXXXXX",
         "Arn": "arn:aws:iam::000000000000:group/Admins",
         "CreateDate": "2026-07-29T11:58:06.176657+00:00"
     }
@@ -157,7 +158,7 @@ aws $EP iam list-attached-user-policies --user-name Analyst_Syazreen
 ```
 
 #### Screenshot Deliverable (Week 1 - Task 3):
-![Task 3 Terminal Output](Lab1/Week1/Task3.PNG)
+<img width="1188" height="498" alt="image" src="https://github.com/user-attachments/assets/06bd0caa-12d6-4812-adbd-892350c32e2b" />
 
 #### Terminal JSON Output:
 ```json
@@ -194,7 +195,7 @@ aws $EP iam list-access-keys --user-name Analyst_Syazreen
 # 4.3 Rotate / deactivate old key
 aws $EP iam update-access-key \
   --user-name Analyst_Syazreen \
-  --access-key-id LKIAQAAAAAAAN3R7EFCM \
+  --access-key-id XXXXXXXXXXXXXXXXXXXX \
   --status Inactive
 
 # 4.4 Verify key status update
@@ -202,7 +203,7 @@ aws $EP iam list-access-keys --user-name Analyst_Syazreen
 ```
 
 #### Screenshot Deliverable (Week 1 - Task 4):
-![Task 4 Terminal Output](Lab1/Week1/Task4.PNG)
+<img width="1003" height="751" alt="image" src="https://github.com/user-attachments/assets/f4da6bdd-6cc5-4550-8e64-a9a7e0702cc9" />
 
 #### Terminal JSON Output:
 ```json
@@ -210,7 +211,7 @@ aws $EP iam list-access-keys --user-name Analyst_Syazreen
     "AccessKeyMetadata": [
         {
             "UserName": "Analyst_Syazreen",
-            "AccessKeyId": "LKIAQAAAAAAAN3R7EFCM",
+            "AccessKeyId": "XXXXXXXXXXXXXXXXXXXX",
             "Status": "Inactive",
             "CreateDate": "2026-07-29T12:12:04.604931+00:00"
         }
@@ -240,7 +241,9 @@ sudo kubectl get nodes
 ```
 
 #### Screenshot Deliverable (Week 2 - Setup):
-![Week 2 Cluster Setup Output](Lab1/Week2/Setup.PNG)
+<img width="548" height="319" alt="Setup" src="https://github.com/user-attachments/assets/fcc974b0-5535-4005-8060-9610d5cc5874" />
+<img width="855" height="246" alt="Setup2" src="https://github.com/user-attachments/assets/c31954e1-3eaa-407c-a954-142912f16064" />
+
 
 #### Terminal Output:
 ```text
@@ -253,11 +256,11 @@ Creating cluster "ccse-lab1" ...
  ✓ Installing StorageClass 💾
 Set kubectl context to "kind-ccse-lab1"
 
-Kubernetes control plane is running at https://127.0.0.1:44587
-CoreDNS is running at https://127.0.0.1:44587/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+Kubernetes control plane is running at https://127.0.0.1:37575
+CoreDNS is running at https://127.0.0.1:37575/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
 
 NAME                      STATUS   ROLES           AGE     VERSION
-ccse-lab1-control-plane   Ready    control-plane   2m41s   v1.30.0
+ccse-lab1-control-plane   Ready    control-plane   6m5s   v1.30.0
 ```
 
 ---
@@ -274,7 +277,7 @@ kubectl get namespaces
 ```
 
 #### Screenshot Deliverable (Week 2 - Task 5):
-![Task 5 Namespaces Output](Lab1/Week2/Task5.jpeg)
+<img width="451" height="356" alt="Task5" src="https://github.com/user-attachments/assets/395c95bc-64fc-4c07-b10d-00aa89f69678" />
 
 #### Terminal Output:
 ```text
@@ -314,7 +317,7 @@ kubectl create rolebinding dev-user-binding -n dev \
 ```
 
 #### Screenshot Deliverable (Week 2 - Task 6):
-![Task 6 Role & RoleBinding Output](Lab1/Week2/Task6.jpeg)
+<img width="849" height="242" alt="Task6" src="https://github.com/user-attachments/assets/5e19abce-7305-4b1e-ba5c-6f4b45592896" />
 
 #### Terminal Output:
 ```text
@@ -344,7 +347,7 @@ kubectl auth can-i list pods -n prod --as=$SA
 ```
 
 #### Screenshot Deliverable (Week 2 - Task 7):
-![Task 7 Auth Testing Output](Lab1/Week2/Task7.jpeg)
+<img width="558" height="300" alt="Task7" src="https://github.com/user-attachments/assets/355c108b-5b2b-4e98-9a50-e0bea1e8b7d3" />
 
 #### Terminal Output:
 ```text
@@ -405,16 +408,19 @@ Command to verify Kubernetes RBAC configuration:
 kubectl get rolebinding dev-user-binding -n dev -o yaml
 ```
 
+#### Screenshot Deliverable:
+<img width="516" height="342" alt="image" src="https://github.com/user-attachments/assets/ed552c6e-620c-435e-87c4-542f3900b757" />
+
 #### YAML Definition:
 ```yaml
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
-  creationTimestamp: "2026-07-29T12:30:00Z"
+  creationTimestamp: "2026-08-03T13:04:00Z"
   name: dev-user-binding
   namespace: dev
-  resourceVersion: "5678"
-  uid: c7b8a9d0-e1f2-3456-7890-abcdef123456
+  resourceVersion: "976"
+  uid: 58dcdf42-5c31-4044-94ad-2c33bc8e54a9
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
