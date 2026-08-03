@@ -28,10 +28,10 @@ D. Rapid Elasticity
 
 1/1
 
-A. Creates AWS accounts
-B. Simulates AWS services locally
-C. Installs Kubernetes
-D. Replaces Docker
+A. Creates AWS accounts  
+B. Simulates AWS services locally  
+C. Installs Kubernetes  
+D. Replaces Docker  
  
 4. If an access key is compromised, what should be done first?
 
