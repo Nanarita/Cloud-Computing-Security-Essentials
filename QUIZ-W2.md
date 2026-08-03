@@ -8,7 +8,7 @@
 
 0/1
 
-A. IAM Policy  
+*A. IAM Policy*  
 B. IAM Group  
 C. IAM Role  
 D. S3 Bucket  
@@ -16,269 +16,291 @@ D. S3 Bucket
 **Correct answer: B. IAM Group**
  
 2. Which is NOT an essential characteristic of cloud computing?
-*
+
 1/1
-Manual Provisioning
- 
-Measured Service
-Resource Pooling
-Rapid Elasticity
+
+A. Manual Provisioning  
+B. Measured Service  
+C. Resource Pooling  
+D. Rapid Elasticity  
  
 3. LocalStack is used because it:
-*
+
 1/1
-Creates AWS accounts
-Simulates AWS services locally
-Installs Kubernetes
-Replaces Docker
+
+A. Creates AWS accounts
+B. Simulates AWS services locally
+C. Installs Kubernetes
+D. Replaces Docker
  
 4. If an access key is compromised, what should be done first?
-*
-0/1
-Delete the IAM user immediately
- 
-Restart Docker
-Ignore it
-Deactivate or rotate the key
 
-**Correct answer:**Deactivate or rotate the key
+0/1
+
+*A. Delete the IAM user immediately*  
+B. Restart Docker  
+C. Ignore it  
+D. Deactivate or rotate the key  
+
+**Correct answer: Deactivate or rotate the key**
  
 5. What does ARN stand for?
-*
+
 1/1
-Amazon Registry Name
-Amazon Resource Number
-Amazon Resource Name
-AWS Resource Namespace
+
+A. Amazon Registry Name  
+B. Amazon Resource Number  
+C. Amazon Resource Name  
+D. AWS Resource Namespace  
  
 6. A node is:
-*
-0/1
-A storage bucket
-A database
-A worker machine
 
-A Docker image
+0/1
+
+A. A storage bucket  
+B. A database  
+C. A worker machine  
+*D. A Docker image*  
  
-**Correct answer:**A worker machine
+**Correct answer: A worker machine**
  
 7. Access keys are mainly used for:
-*
-0/1
-Programmatic access
-AWS Management Console login
- 
-Docker login
-Kubernetes dashboard login
 
-**Correct answer:**Programmatic access
+0/1
+
+A. Programmatic access  
+*B. AWS Management Console login*  
+C. Docker login  
+D. Kubernetes dashboard login  
+
+**Correct answer: Programmatic access**
  
 8. Which security principle gives users only the permissions required to perform their tasks?
-*
+
 1/1
-Confidentiality
-Zero Trust
-Principle of Least Privilege
-Defense in Depth
+
+A. Confidentiality  
+B. Zero Trust  
+C. Principle of Least Privilege  
+D. Defense in Depth  
  
 9. Which command lists Kubernetes nodes?
-*
+
 1/1
-aws iam list-users
-kubectl get buckets
-kubectl get nodes
-docker ps
+
+A. aws iam list-users  
+B. kubectl get buckets  
+C. kubectl get nodes  
+D. docker ps  
  
 10. Which tool creates a local Kubernetes cluster?
-*
-0/1
-Amazon EC2
-LocalStack
- 
-Docker Desktop
-kind
 
-**Correct answer:**kind
+0/1
+
+A. Amazon EC2  
+*B. LocalStack*  
+C. Docker Desktop  
+D. kind  
+
+**Correct answer: kind**
  
 11. Which AWS identity has unlimited privileges?
-*
+
 1/1
-IAM Role
-IAM User
-Root User
-IAM Group
+
+A. IAM Role  
+B. IAM User  
+C. Root User  
+D. IAM Group  
  
 12. Which AWS CLI command verifies the current identity?
-*
+
 1/1
-aws login
-aws sts get-caller-identity
-aws iam whoami
-aws identity
+
+A. aws login  
+B. aws sts get-caller-identity  
+C. aws iam whoami  
+D. aws identity  
  
 13. For easier permission management, policies should preferably be attached to:
-*
-0/1
-Individual users
- 
-IAM Groups
-The Root User
-Access keys
 
-**Correct answer:**IAM Groups
+0/1
+
+*A. Individual users*  
+B. IAM Groups  
+C. The Root User  
+D. Access keys  
+
+**Correct answer: IAM Groups**
  
 14. Which AWS-managed policy provides full administrative access?
-*
+
 1/1
-AmazonS3ReadOnlyAccess
-AdministratorAccess
-IAMReadOnlyAccess
-RootPolicy
+
+A. AmazonS3ReadOnlyAccess  
+B. AdministratorAccess  
+C. IAMReadOnlyAccess  
+D. RootPolicy  
  
 15. Cloud computing refers to:
-*
-0/1
-Installing software locally
-Buying more physical servers
-Delivering computing resources over the Internet
-Running applications only on Windows
 
-**Correct answer:**Buying more physical servers
+0/1
+
+A. Installing software locally  
+B. Buying more physical servers  
+*C. Delivering computing resources over the Internet*  
+D. Running applications only on Windows  
+
+**Correct answer: Buying more physical servers**
  
 16. Which endpoint is commonly used with LocalStack?
-*
+
 1/1
-http://localhost:3389
-http://localhost:4566
-http://localhost:22
-http://localhost:80
+
+A. http://localhost:3389  
+B. http://localhost:4566  
+C. http://localhost:22  
+D. http://localhost:80  
  
 17. The smallest deployable unit in Kubernetes is:
-*
+
 1/1
-Virtual Machine
-Pod
-Node
-Cluster
+
+A. Virtual Machine  
+B. Pod  
+C. Node  
+D. Cluster  
  
 18. Which deployment model combines private and public cloud?
-*
-0/1
-Hybrid Cloud
-Community Cloud
-Multi-cloud
-Public Cloud
 
-**Correct answer:**Hybrid Cloud
+0/1
+
+A. Hybrid Cloud  
+B. Community Cloud  
+*C. Multi-cloud*  
+D. Public Cloud  
+
+**Correct answer: Hybrid Cloud**
  
 19. Which service model provides virtual machines?
-*
+
 1/1
-IaaS
-PaaS
-SaaS
-DBaaS
+
+A. IaaS  
+B. PaaS  
+C. SaaS  
+D. BaaS  
  
 20. Which IAM component contains permissions?
-*
-0/1
-IAM Group
-IAM Role
-IAM Policy
-IAM User
 
-**Correct answer:**IAM Policy
+0/1
+
+A. IAM Group  
+*B. IAM Role*  
+C. IAM Policy  
+D. IAM User  
+
+**Correct answer: IAM Policy**
  
 21. Which IAM identity is normally used as a temporary identity?
-*
-0/1
-IAM Group
-IAM User
-Root User
-IAM Role
 
-**Correct answer:**IAM Role
+0/1
+
+A. IAM Group  
+*B. IAM User*  
+C. Root User  
+D. IAM Role  
+
+**Correct answer: IAM Role**
  
 22. Docker is mainly used to:
-*
+
 1/1
-Manage IAM
-Create databases
-Run containers
-Create AWS accounts
+
+A. Manage IAM  
+B. Create databases  
+C. Run containers  
+D. Create AWS accounts  
  
 23. In the ARN arn:aws:s3:::my-bucket, which component represents the AWS service?
-*
+
 1/1
-aws
-s3
-arn
-my-bucket
+A. aws
+B. s3
+C. arn
+D. my-bucket
  
 24. Google Docs is an example of:
-*
-0/1
-Virtual Machine
-SaaS
-PaaS
-IaaS
 
-**Correct answer:**SaaS
+0/1
+
+A. Virtual Machine  
+B. SaaS  
+*C. PaaS*  
+D. IaaS  
+
+**Correct answer: SaaS**
  
 25. Which deployment model provides the MOST control?
-*
-0/1
-Public Cloud
-Hybrid Cloud
-Private Cloud
-Community Cloud
 
-**Correct answer:**Private Cloud
+0/1
+
+*A. Public Cloud*  
+B. Hybrid Cloud  
+C. Private Cloud  
+D. Community Cloud  
+
+**Correct answer: Private Cloud**
  
 26. Which service model requires customers to manage the operating system?
-*
-0/1
-SaaS
-IaaS
-PaaS
-FaaS
 
-**Correct answer:**IaaS
+0/1
+
+*A. SaaS*  
+B. IaaS  
+C. PaaS  
+D. FaaS  
+
+**Correct answer: IaaS**
  
 27. Which characteristic allows cloud resources to automatically grow or shrink?
-*
-0/1
-Resource Pooling
-On-demand Self-Service
-Rapid Elasticity
-Broad Network Access
 
-**Correct answer:**Rapid Elasticity
+0/1
+
+*A. Resource Pooling*  
+B. On-demand Self-Service  
+C. Rapid Elasticity  
+D. Broad Network Access  
+
+**Correct answer: Rapid Elasticity**
  
 28. Which ARN component identifies the AWS account that owns the resource?
-*
-0/1
-Region
-Resource ID
-Service
-Account ID
 
-**Correct answer:**Resource ID
+0/1
+
+*A. Region*  
+B. Resource ID  
+C. Service  
+D. Account ID  
+
+**Correct answer: Resource ID**
  
 29. A Kubernetes cluster consists of:
-*
+
 1/1
-Containers only
-Access keys
-Multiple nodes
-Multiple policies
+
+A. Containers only  
+B. Access keys  
+C. Multiple nodes  
+D. Multiple policies  
  
 30. Which account should never have access keys created for routine use?
-*
-0/1
-Root User
-IAM Role
-IAM User
-Analyst User
 
-**Correct answer:**Root User
+0/1
+
+A. Root User  
+B. IAM Role  
+C. IAM User  
+*D. Analyst User*  
+
+**Correct answer: Root User**
