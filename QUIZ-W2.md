@@ -6,13 +6,13 @@
 
 1. A collection of IAM users is called:
 
-*0/1
--IAM Policy* 
--IAM Group
--IAM Role
--S3 Bucket
+0/1
+*IAM Policy
+*IAM Group
+*IAM Role
+*S3 Bucket
 
-**Correct answer:**IAM Group
+**Correct answer:** IAM Group
  
 2. Which is NOT an essential characteristic of cloud computing?
 *
