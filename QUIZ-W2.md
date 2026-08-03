@@ -8,12 +8,12 @@
 
 0/1
 
-*IAM Policy
-*IAM Group
-*IAM Role
-*S3 Bucket
+A. IAM Policy  
+B. IAM Group  
+C. IAM Role  
+D. S3 Bucket  
 
-**Correct answer: IAM Group**
+**Correct answer: B. IAM Group**
  
 2. Which is NOT an essential characteristic of cloud computing?
 *
