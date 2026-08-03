@@ -1,6 +1,6 @@
-**Name:** Siti Nurjannah binti Daud
-**Class:** B03
-**ID:** 52215124446
+**Name:** Siti Nurjannah binti Daud  
+**Class:** B03  
+**ID:** 52215124446  
 
 **TOTAL POINTS: 14/30**
 
