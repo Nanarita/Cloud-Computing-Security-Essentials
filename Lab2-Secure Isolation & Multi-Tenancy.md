@@ -6,7 +6,8 @@
 **Lecturer:** Prof. Dr. Shahrulniza Musa  
 **Lab Assignment:** Lab 2 (Weeks 3–4) — Secure Isolation & Multi-Tenancy  
 **Course Learning Outcome:** CLO2 — Construct secure cloud operations that safeguard data integrity  
-**Environment User:** `nana` (`nana@kali`)  
+**Student Name:** Siti Nurjannah Binti Daud  
+**Student ID:** 52215124446  
 
 ---
 
@@ -84,8 +85,10 @@ daemon set "calico-node" successfully rolled out
 ```
 
 #### Evidence Artifacts:
-- Cluster Creation: ![Setup.PNG](file:///c:/Users/fikri/Documents/Sem%206%20Short%20Sem/Cloud%20Computing/Lab2/Setup.PNG)
-- Calico CNI Deployment: ![Setup2.PNG](file:///c:/Users/fikri/Documents/Sem%206%20Short%20Sem/Cloud%20Computing/Lab2/Setup2.PNG)
+- Cluster Creation:  
+  <img width="579" height="332" alt="Setup" src="https://github.com/user-attachments/assets/fc43f505-05b9-43ef-88dd-1454a3be4c27" />
+
+- Calico CNI Deployment: <img width="891" height="622" alt="Setup2" src="https://github.com/user-attachments/assets/7f94e709-6ab7-4de6-87f9-9b6efac7dfd5" />
 
 ---
 
@@ -128,7 +131,8 @@ service/web   ClusterIP   10.96.7.222  <none>        80/TCP    0s
 ```
 
 #### Evidence Artifact:
-- Tenant Creation & Pod Verification: ![Task1.PNG](file:///c:/Users/fikri/Documents/Sem%206%20Short%20Sem/Cloud%20Computing/Lab2/Task1.PNG)
+- Tenant Creation & Pod Verification:  
+  <img width="617" height="351" alt="Task1" src="https://github.com/user-attachments/assets/98debf31-7dc1-4053-a1d6-16b2ae93a3b3" />
 
 ---
 
@@ -161,7 +165,8 @@ pod "probe" deleted
 > **Vulnerability Confirmed**: The `HTTP 200` response proves that `tenant-a` successfully breached the logical namespace boundary and accessed `tenant-b`'s internal web application without authentication or authorization filters.
 
 #### Evidence Artifact:
-- Cross-Tenant Connectivity (HTTP 200): ![Task2.PNG](file:///c:/Users/fikri/Documents/Sem%206%20Short%20Sem/Cloud%20Computing/Lab2/Task2.PNG)
+- Cross-Tenant Connectivity (HTTP 200):  
+  <img width="709" height="165" alt="Task2" src="https://github.com/user-attachments/assets/28451902-7373-47ea-b0b2-c1b29b7f576a" />
 
 ---
 
@@ -205,7 +210,8 @@ requests.memory  0     512Mi
 ```
 
 #### Evidence Artifact:
-- ResourceQuota Creation & Description: ![Task3.PNG](file:///c:/Users/fikri/Documents/Sem%206%20Short%20Sem/Cloud%20Computing/Lab2/Task3.PNG)
+- ResourceQuota Creation & Description:  
+  <img width="537" height="397" alt="Task3" src="https://github.com/user-attachments/assets/cc1ea0ef-8eef-4d26-a600-9833e490c2aa" />
 
 ---
 
@@ -247,7 +253,8 @@ Error from server (Forbidden): pods "probe" is forbidden: failed quota: tenant-a
 > 2. Simultaneously, the admission control engine strictly enforces `tenant-a-quota` from Task 3, refusing un-resourced pod creation. Once resource limits are supplied, NetworkPolicy drops cross-tenant packets, resulting in a connection **timeout/failure** rather than an `HTTP 200`.
 
 #### Evidence Artifact:
-- Default-Deny Policy & Network Block: ![Task4.PNG](file:///c:/Users/fikri/Documents/Sem%206%20Short%20Sem/Cloud%20Computing/Lab2/Task4.PNG)
+- Default-Deny Policy & Network Block:  
+  <img width="1259" height="290" alt="Task4" src="https://github.com/user-attachments/assets/674bfece-4d23-4b79-8019-127f41f2ab2f" />
 
 ---
 
@@ -289,8 +296,11 @@ no
 > **Authorization Verification**: The output confirms that `app-a` can access secrets in its home namespace (`tenant-a`), but receives an explicit `no` when attempting to access `tenant-b`'s secrets, validating storage and secret isolation.
 
 #### Evidence Artifacts:
-- RBAC Configuration: ![Task5-1.PNG](file:///c:/Users/fikri/Documents/Sem%206%20Short%20Sem/Cloud%20Computing/Lab2/Task5-1.PNG)
-- Access Boundary Check (`yes` / `no`): ![Task5-2.PNG](file:///c:/Users/fikri/Documents/Sem%206%20Short%20Sem/Cloud%20Computing/Lab2/Task5-2.PNG)
+- RBAC Configuration:  
+  <img width="729" height="225" alt="Task5-1" src="https://github.com/user-attachments/assets/0d566553-04f1-4cc9-b426-b63bfc3624ed" />
+
+- Access Boundary Check (`yes` / `no`):  
+  <img width="487" height="176" alt="Task5-2" src="https://github.com/user-attachments/assets/d06f057b-688c-4f61-8093-014cd10014cf" />
 
 ---
 
@@ -330,7 +340,8 @@ wiped
 > **Cloud Storage Context**: While block-level zeroing works on local volumes, cloud tenants do not possess direct block access to shared SAN/NVMe storage arrays. Therefore, **Cryptographic Erasure** (destroying the encryption key managing ciphertext) is the standard cloud mechanism for data destruction.
 
 #### Evidence Artifact:
-- Data Remanence & Secure Wipe Execution: ![Task6.PNG](file:///c:/Users/fikri/Documents/Sem%206%20Short%20Sem/Cloud%20Computing/Lab2/Task6.PNG)
+- Data Remanence & Secure Wipe Execution:  
+  <img width="684" height="367" alt="Task6" src="https://github.com/user-attachments/assets/dac0aa14-8811-46d2-9ad5-88e4d9311a23" />
 
 ---
 
@@ -444,7 +455,8 @@ requests.memory  0     512Mi
 ```
 
 #### Evidence Artifact:
-- Final Verification Output: ![3. Verification Command.PNG](file:///c:/Users/fikri/Documents/Sem%206%20Short%20Sem/Cloud%20Computing/Lab2/3.%20Verification%20Command.PNG)
+- Final Verification Output:  
+  <img width="521" height="242" alt="3  Verification Command" src="https://github.com/user-attachments/assets/d9cc373d-54e9-4518-8cdd-4427e5a6370d" />
 
 ---
 
@@ -481,4 +493,4 @@ docker volume rm ccse-vol
 4. **Cluster-Wide Enforcement via Calico GlobalNetworkPolicy**: Utilize Calico `GlobalNetworkPolicy` CRDs to enforce multi-tenant network isolation across non-namespaced resources and node-level endpoints cluster-wide.
 
 ---
-*Report compiled by Student `nana` (`nana@kali`) for IKB42603 Cloud Computing Security Essentials.*
+*Report compiled by Student `Siti Nurjannah binti Daud` (`nana@kali`) for IKB42603 Cloud Computing Security Essentials.*
