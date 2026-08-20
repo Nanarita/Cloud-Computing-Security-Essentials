@@ -77,7 +77,8 @@ MATCH: decryption successful
 ```
 
 #### Evidence Artifact:
-- AES encrypt/decrypt with MATCH confirmation: ![Task1.PNG](file:///c:/Users/fikri/Documents/Sem%206%20Short%20Sem/Cloud%20Computing/Lab3/Task1.PNG)
+- AES encrypt/decrypt with MATCH confirmation:  
+  <img width="616" height="314" alt="Task1" src="https://github.com/user-attachments/assets/bcb2c1b5-4598-4157-ae70-18ff2916fb1d" />
 
 ---
 
@@ -112,7 +113,8 @@ Verified OK
 > Note how the roles reverse: encryption uses the public key, signing uses the private key. This is the basis of PKI and TLS.
 
 #### Evidence Artifact:
-- RSA signature verify output: ![Task2.PNG](file:///c:/Users/fikri/Documents/Sem%206%20Short%20Sem/Cloud%20Computing/Lab3/Task2.PNG)
+- RSA signature verify output:  
+  <img width="727" height="221" alt="Task2" src="https://github.com/user-attachments/assets/f30f07c9-ef5f-469d-891e-9a0ee2470c2d" />
 
 ---
 
@@ -151,11 +153,11 @@ Patient: Ahmad, Diagnosis: confidential
 
 #### Evidence Artifacts:
 - TLS Setup & Connection Tests: 
-  - ![Task3(1).PNG](file:///c:/Users/fikri/Documents/Sem%206%20Short%20Sem/Cloud%20Computing/Lab3/Task3(1).PNG)
-  - ![Task3(2).PNG](file:///c:/Users/fikri/Documents/Sem%206%20Short%20Sem/Cloud%20Computing/Lab3/Task3(2).PNG)
-  - ![Task3(3).PNG](file:///c:/Users/fikri/Documents/Sem%206%20Short%20Sem/Cloud%20Computing/Lab3/Task3(3).PNG)
-  - ![Task3(4).PNG](file:///c:/Users/fikri/Documents/Sem%206%20Short%20Sem/Cloud%20Computing/Lab3/Task3(4).PNG)
-  - ![Task3(5).PNG](file:///c:/Users/fikri/Documents/Sem%206%20Short%20Sem/Cloud%20Computing/Lab3/Task3(5).PNG)
+  <img width="1901" height="187" alt="Task3(1)" src="https://github.com/user-attachments/assets/fd1d4f9e-d100-4b7d-b2f3-812ccffbc70c" />  
+  <img width="1901" height="795" alt="Task3(2)" src="https://github.com/user-attachments/assets/45060b16-77ce-4d54-9016-e362175edfe8" />  
+  <img width="1906" height="794" alt="Task3(3)" src="https://github.com/user-attachments/assets/d979f198-af54-4ce6-9ca3-719e41c09a45" />  
+  <img width="1908" height="795" alt="Task3(4)" src="https://github.com/user-attachments/assets/51eb023d-ee21-4469-a9f3-364dd36af525" />  
+  <img width="1900" height="62" alt="Task3(5)" src="https://github.com/user-attachments/assets/24d6d021-8f27-4de4-b3a8-1a2c97d69fdd" />  
 
 ---
 
@@ -181,7 +183,8 @@ aws $EP kms encrypt --key-id $KEY_A --plaintext "$(echo -n 'hello' | base64)" \
 ```
 
 #### Evidence Artifact:
-- Master Key Creation & Direct KMS Encryption: ![Task4.PNG](file:///c:/Users/fikri/Documents/Sem%206%20Short%20Sem/Cloud%20Computing/Lab3/Task4.PNG)
+- Master Key Creation & Direct KMS Encryption:  
+  <img width="992" height="544" alt="Task4" src="https://github.com/user-attachments/assets/2906bc2c-78a7-4309-a0a3-d441e588ba13" />
 
 ---
 
@@ -210,15 +213,20 @@ echo 'Only the KMS-wrapped data key (datakey.enc) remains.'
 > To read the data later you send `datakey.enc` back to KMS (`kms decrypt`) to unwrap it, use it, then discard it. Only the small master key ever needs hardware-grade protection.
 
 #### Evidence Artifacts:
-- Data Key Generation: ![Task5.1.PNG](file:///c:/Users/fikri/Documents/Sem%206%20Short%20Sem/Cloud%20Computing/Lab3/Task5.1.PNG)
-- Local Encryption via Data Key: ![Task5.2.PNG](file:///c:/Users/fikri/Documents/Sem%206%20Short%20Sem/Cloud%20Computing/Lab3/Task5.2.PNG)
-- Destruction of Plaintext Key: ![Task5.3.PNG](file:///c:/Users/fikri/Documents/Sem%206%20Short%20Sem/Cloud%20Computing/Lab3/Task5.3.PNG)
+- Data Key Generation:  
+  <img width="1659" height="192" alt="Task5 1" src="https://github.com/user-attachments/assets/bd58952d-4bb9-405c-b4c6-be9801f72f96" />  
+
+- Local Encryption via Data Key:  
+  <img width="812" height="102" alt="Task5 2" src="https://github.com/user-attachments/assets/bfce0baf-3d1b-4534-9bd4-6e3f521c14eb" />  
+
+- Destruction of Plaintext Key:  
+  <img width="534" height="115" alt="Task5 3" src="https://github.com/user-attachments/assets/c774995e-15a8-4b83-b5ff-e0114e3a726e" />  
 
 ---
 
 ### Task 6 — Per-Tenant Keys & Cryptographic Erasure
 
-Created a second tenant key to show that one tenant's key cannot read another's data. Scheduled key deletion to simulate cryptographic erasure.
+Created a second tenant key to show that one tenant's key cannot read another's data.
 
 #### Shell Commands Executed:
 ```bash
@@ -229,30 +237,25 @@ KEY_B=<PASTE_KEYID>
 # Schedule deletion of tenant A's key (min window)
 aws $EP kms schedule-key-deletion --key-id $KEY_A --pending-window-in-days 7
 
-# Disable it immediately to simulate erasure
-aws $EP kms disable-key --key-id $KEY_A
+# Check key state (shows PendingDeletion)
+aws $EP kms describe-key --key-id$KEY_A --query 'KeyMetadata.KeyState' --output text
 
-# Attempt to unwrap tenant A's data key now — it should FAIL
-aws $EP kms decrypt --ciphertext-blob fileb://datakey.enc 2>&1 | head -3
-```
+# Cancel deletion and disable it instead to simulate cryptographic erasure state
+aws $EP kms cancel-key-deletion --key-id$KEY_A
+aws $EP kms describe-key --key-id$KEY_A --query 'KeyMetadata.KeyState' --output text
 
-#### Terminal Execution & Output:
-```text
-{
-    "KeyId": "arn:aws:kms:us-east-1:000000000000:key/...",
-    "DeletionDate": "..."
-}
-An error occurred (KMSInvalidStateException) when calling the Decrypt operation: arn:aws:kms:us-east-1:000000000000:key/... is pending deletion.
+# Attempt to unwrap tenant A's data key now — it should fail
+aws $EP kms decrypt --ciphertext-blob file://datakey.enc 2>&1 | head -3
 ```
 
 > [!CAUTION]
 > Once the key that wrapped the data key is gone, `record.env.enc` is just noise — no one, not even the provider, can decrypt it. This is why per-object/per-tenant keys make deletion provable.
 
 #### Evidence Artifacts:
-- Key Deletion & Erasure Testing:
-  - ![Task6(1).PNG](file:///c:/Users/fikri/Documents/Sem%206%20Short%20Sem/Cloud%20Computing/Lab3/Task6(1).PNG)
-  - ![Task6(2).PNG](file:///c:/Users/fikri/Documents/Sem%206%20Short%20Sem/Cloud%20Computing/Lab3/Task6(2).PNG)
-  - ![Task6(3).PNG](file:///c:/Users/fikri/Documents/Sem%206%20Short%20Sem/Cloud%20Computing/Lab3/Task6(3).PNG)
+- Key Deletion & Erasure Testing:  
+  <img width="772" height="415" alt="Task6(1)" src="https://github.com/user-attachments/assets/cb24976e-371d-40ea-8b67-509faf963a3b" />  
+  <img width="1572" height="444" alt="Task6(2)" src="https://github.com/user-attachments/assets/05180954-47e3-469e-9413-4a59827cb600" />  
+  <img width="1139" height="83" alt="Task6(3)" src="https://github.com/user-attachments/assets/4341adc0-e408-4d14-ae08-83666f330746" />  
 
 ---
 
@@ -277,7 +280,9 @@ for line in 'login ok' 'file read' 'export data'; do \
 ```
 
 #### Evidence Artifact:
-- Hashing and Hash Chain Output: ![Task7.PNG](file:///c:/Users/fikri/Documents/Sem%206%20Short%20Sem/Cloud%20Computing/Lab3/Task7.PNG)
+- Hashing and Hash Chain Output:  
+  <img width="1138" height="305" alt="Task7" src="https://github.com/user-attachments/assets/6a81ea0d-6a48-40ad-96f1-6345c92021bf" />
+
 
 ---
 
@@ -301,22 +306,22 @@ for line in 'login ok' 'file read' 'export data'; do \
 ### 2. Short-Answer Questions (Q1 - Q5)
 
 #### **Q1. Compare symmetric and asymmetric encryption: speed, key distribution, and typical use.**
-- **Speed**: Symmetric encryption is highly performant and fast. Asymmetric encryption is significantly slower and computationally expensive.
-- **Key Distribution**: Symmetric encryption relies on a single shared key, which introduces severe key distribution challenges since both parties must securely exchange this key beforehand. Asymmetric encryption uses a public/private key pair, making key distribution trivial as the public key can be openly shared without compromising the private key.
-- **Typical Use**: Symmetric encryption is used for bulk data encryption (data at rest, large files). Asymmetric encryption is used for exchanging symmetric keys, establishing TLS handshakes, and digital signatures.
+- **Speed**: Symmetric is lightweight and very fast; asymmetric is mathematically heavy and slow.
+- **Key Distribution**: Symmetric requires securely sharing a single secret key beforehand; asymmetric uses a public/private key pair, making distribution safe and easy.
+- **Typical Use**: Symmetric is for bulk data encryption (at rest); asymmetric is for key exchange, TLS handshakes, and digital signatures.
 
 #### **Q2. Why is key management described as the weakest link, not the algorithm?**
-Modern encryption algorithms like AES-256 are mathematically proven and practically unbreakable by brute force. Instead of attacking the cryptography, attackers target human and operational weaknesses: hardcoded keys, leaked passphrases, or poorly secured Key Management Systems. If the key is stolen, the strength of the algorithm is irrelevant. Key Management provides the critical access control and lifecycle policies that actually secure the ciphertext.
+Modern cryptographic algorithms like AES-256 are mathematically rigorous and completely unfeasible to break through brute force alone. Because the underlying math is rock-solid, attackers completely bypass the cryptography and target human, operational, or architectural flaws such as hardcoded API keys in source code, weak administrative passwords, or misconfigured Key Management Systems. Ultimately, if a key is stolen or mishandled due to poor lifecycle management, the strength of the algorithm becomes entirely meaningless, proving that key security is the true foundation of system defense.
 
 #### **Q3. Explain envelope encryption and why only the master key needs hardware-grade protection.**
-- **Envelope Encryption**: This is the practice of encrypting plaintext data locally with a generated Data Encryption Key (DEK). To protect the DEK, it is wrapped (encrypted) by a Master Key (Key Encryption Key or KEK). 
-- **Hardware-Grade Protection**: Only the small Master Key needs to be stored in an HSM or KMS with hardware-grade security. The wrapped DEK can safely be stored alongside the encrypted data payload. This dramatically reduces KMS API latency and load, as bulk encryption is done locally and only the DEK needs to be transmitted to the KMS for wrapping and unwrapping.
+- **Envelope Encryption**: Encrypting large files locally using a Data Encryption Key (DEK), then wrapping (encrypting) that DEK with a Master Key.
+- **Hardware Protection:** Only the core Master Key needs high-security HSM storage. The wrapped DEK travels safely with the file, saving network overhead since heavy lifting happens locally.
 
 #### **Q4. How does cryptographic erasure achieve provable deletion where overwriting cannot (in the cloud)?**
-In cloud environments, storage is decoupled and highly replicated (SAN, snapshots, multi-AZ backups), making it impossible to guarantee that every physical byte of a file has been overwritten by tools like `dd`. Cryptographic erasure solves this by wrapping the data in encryption. To "delete" the data, the tenant simply destroys the Master Key in the KMS. Without the key, every distributed copy and backup of the data immediately turns into unrecoverable cryptographic noise, ensuring instant and provable data destruction.
+In cloud environments, data is dynamically distributed, heavily replicated across multiple availability zones, and stored in invisible snapshots, making traditional physical block overwriting (like dd) unreliable and impossible to verify. Cryptographic erasure bypasses this hardware limitation by ensuring data is always stored as ciphertext. To achieve provable deletion, the tenant simply destroys or disables the Master Key in the KMS. Without that core key, every scattered copy, snapshot, and backup instantly turns into unrecoverable cryptographic noise, guaranteeing instant and verifiable data destruction without needing to wipe physical hardware blocks.
 
 #### **Q5. How does a hash chain make a log tamper-evident (link to tamper-proof logs, Week 6)?**
-A hash chain links sequential log entries by taking the cryptographic hash of the previous entry and feeding it as input into the hash calculation of the current entry. If a malicious actor alters any historical log entry, its hash value will change completely. This modified hash will subsequently invalidate the calculation of the next entry, cascading the failure through the entire remainder of the chain. This domino effect makes any tampering instantly evident upon verification of the final hash.
+A hash chain secures logs by mathematically binding each sequential entry, taking the cryptographic hash of the previous log and feeding it into the calculation for the current one. If a malicious actor attempts to covertly alter any historical log entry, its resulting hash changes completely. Because every subsequent block relies directly on the hash of the one before it, that single modification triggers a cascading domino effect that invalidates every following hash in the chain. This built-in mathematical dependency makes any tampering instantly noticeable upon verification.
 
 ---
 
@@ -329,7 +334,8 @@ openssl dgst -sha256 -verify public.pem -signature record.sig record.txt
 ```
 
 #### Evidence Artifact:
-- Final Verification Output: ![3. Verification Command.PNG](file:///c:/Users/fikri/Documents/Sem%206%20Short%20Sem/Cloud%20Computing/Lab3/3.%20Verification%20Command.PNG)
+- Final Verification Output  
+  <img width="843" height="270" alt="3  Verification Command" src="https://github.com/user-attachments/assets/5155b5d3-36ab-45d3-9efb-e132838c2a0c" />  
 
 ---
 
@@ -365,4 +371,4 @@ docker stop localstack && docker rm localstack
 4. **Automate key rotation** and re-wrap existing data keys under a new master key.
 
 ---
-*Report compiled by Student `fikri` for IKB42603 Cloud Computing Security Essentials.*
+*Report compiled by Student `Siti Nurjannah binti Daud` for IKB42603 Cloud Computing Security Essentials.*
