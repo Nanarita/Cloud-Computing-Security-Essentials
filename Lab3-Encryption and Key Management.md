@@ -6,7 +6,8 @@
 **Lecturer:** Prof. Dr. Shahrulniza Musa  
 **Lab Assignment:** Lab 3 (Weeks 5–6) — Data Protection: Encryption & Key Management  
 **Course Learning Outcome:** CLO2 — Construct secure cloud operations that safeguard data integrity (VBE3)  
-**Environment User:** `fikri`  
+**Student Name:** `Siti Nurjannah binti Daud`  
+**Student ID:** `52215124446`  
 
 ---
 
