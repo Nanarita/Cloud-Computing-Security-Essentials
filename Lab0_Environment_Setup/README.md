@@ -11,9 +11,8 @@
   docker --version
   ```
 
- Evidence:
- 
- <img width="351" height="68" alt="1  Docker" src="https://github.com/user-attachments/assets/f8cfa18e-b498-4260-80e9-d9ac5c9fc8eb" />
+ Evidence:  
+ <img width="351" height="68" alt="1  Docker" src="https://github.com/user-attachments/assets/3408043e-49a2-4122-bd65-85d706662ee4" />
 
 
 ## 2) Install AWS CLI v2
@@ -22,9 +21,9 @@
   ```powershell
   aws --version
   ```
- Evidence:
- 
- <img width="624" height="67" alt="2  AWS CLI v2" src="https://github.com/user-attachments/assets/884ae615-60e5-4535-bf21-33d0a6a7e6d9" />
+ Evidence:  
+ <img width="624" height="67" alt="2  AWS CLI v2" src="https://github.com/user-attachments/assets/88236353-04e9-4647-a763-e927131511d5" />
+
 
 ## 3) Install kind and kubectl
 - Download the kind Windows binary or use Go if available. Example with curl (PowerShell):
@@ -74,9 +73,9 @@
   ```
 - Or run via Docker Compose as shown in the guide.
   
- Evidence:
+ Evidence:  
+ <img width="1137" height="692" alt="5  LocalStack" src="https://github.com/user-attachments/assets/6602caec-d33b-483c-b0f8-e1d94ee0383e" />
 
- <img width="1137" height="692" alt="5  LocalStack" src="https://github.com/user-attachments/assets/351abcae-7dc0-4298-aec4-3e0b772d7e13" />
 
 ## 6) Create the Kubernetes cluster with kind
 - Create the cluster:
