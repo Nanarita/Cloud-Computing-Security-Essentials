@@ -6,6 +6,8 @@
 **Lecturer:** Prof. Dr. Shahrulniza Musa  
 **Lab Assignment:** Lab 5 (Weeks 9–10) — Monitoring, Logging & Incident Detection  
 **Course Learning Outcome:** CLO2 — Construct secure cloud operations that safeguard data integrity  
+**Student Name:** `Siti Nurjannah binti Daud`  
+**Student ID:** `52215124446`  
 
 ---
 
@@ -57,8 +59,9 @@ aws $EP logs create-log-group --log-group-name /ccse/app
 aws $EP logs create-log-stream --log-group-name /ccse/app --log-stream-name auth
 ```
 
-#### Evidence Artifact:
-- LocalStack & CloudWatch Setup: ![Setup_StartLocalstack.PNG](./Lab5-Evidence/Setup_StartLocalstack.PNG)
+#### Evidence Artifact:  
+- LocalStack & CloudWatch Setup:  
+  ![Setup_StartLocalstack.PNG](./Lab5-Evidence/Setup_StartLocalstack.PNG)
 
 ---
 
@@ -80,8 +83,9 @@ EOF
 cat auth.log
 ```
 
-#### Evidence Artifact:
-- Application Log Generation: ![Task1. Generate Application Logs.PNG](./Lab5-Evidence/Task1.%20Generate%20Application%20Logs.PNG)
+#### Evidence Artifact:  
+- Application Log Generation:  
+  ![Task1. Generate Application Logs.PNG](./Lab5-Evidence/Task1.%20Generate%20Application%20Logs.PNG)
 
 ---
 
@@ -103,7 +107,8 @@ aws $EP logs get-log-events --log-group-name /ccse/app --log-stream-name auth \
 ```
 
 #### Evidence Artifact:
-- Log Ingestion and Read-back: ![Task2. Centralise Logs (Ship to CloudWatch).PNG](./Lab5-Evidence/Task2.%20Centralise%20Logs%20(Ship%20to%20CloudWatch).PNG)
+- Log Ingestion and Read-back:
+  ![Task2. Centralise Logs (Ship to CloudWatch).PNG](./Lab5-Evidence/Task2.%20Centralise%20Logs%20(Ship%20to%20CloudWatch).PNG)
 
 ---
 
@@ -118,7 +123,8 @@ grep LOGIN_FAIL auth.log | awk '{print $4, $5}' | sort | uniq -c
 ```
 
 #### Evidence Artifact:
-- Security Activity Query: ![Task3. Query for Security-Relevant Activity.PNG](./Lab5-Evidence/Task3.%20Query%20for%20Security-Relevant%20Activity.PNG)
+- Security Activity Query:  
+ ![Task3. Query for Security-Relevant Activity.PNG](./Lab5-Evidence/Task3.%20Query%20for%20Security-Relevant%20Activity.PNG)
 
 ---
 
@@ -169,7 +175,8 @@ fi
 ```
 
 #### Evidence Artifact:
-- Event Correlation Alert: ![Task5. Detect the Incident (Correlation).PNG](./Lab5-Evidence/Task5.%20Detect%20the%20Incident%20(Correlation).PNG)
+- Event Correlation Alert:  
+  ![Task5. Detect the Incident (Correlation).PNG](./Lab5-Evidence/Task5.%20Detect%20the%20Incident%20(Correlation).PNG)
 
 ---
 
@@ -190,7 +197,8 @@ cat evidence.sha256
 ```
 
 #### Evidence Artifact:
-- Network Containment & Evidence Hash: ![Task6. Incident Response.PNG](./Lab5-Evidence/Task6.%20Incident%20Response.PNG)
+- Network Containment & Evidence Hash:
+  ![Task6. Incident Response.PNG](./Lab5-Evidence/Task6.%20Incident%20Response.PNG)
 
 ---
 
@@ -258,7 +266,8 @@ sha256sum -c evidence.sha256
 ```
 
 #### Evidence Artifact:
-- Final Verification Output: ![4. Verification Command.PNG](./Lab5-Evidence/4.%20Verification%20Command.PNG)
+- Final Verification Output:  
+  ![4. Verification Command.PNG](./Lab5-Evidence/4.%20Verification%20Command.PNG)
 
 ---
 
@@ -283,7 +292,8 @@ docker stop localstack && docker rm localstack
 ```
 
 #### Evidence Artifact:
-- Cleanup Execution: ![Cleanup & Teardown.PNG](./Lab5-Evidence/Cleanup%20&%20Teardown.PNG)
+- Cleanup Execution:  
+  ![Cleanup & Teardown.PNG](./Lab5-Evidence/Cleanup%20&%20Teardown.PNG)
 
 ---
 
@@ -295,4 +305,4 @@ docker stop localstack && docker rm localstack
 4. **Configure log retention** and export to object storage to meet a compliance retention requirement.
 
 ---
-*Report compiled for IKB42603 Cloud Computing Security Essentials.*
+*Report compiled by Student `Siti Nurjannah binti Daud` for IKB42603 Cloud Computing Security Essentials.*
