@@ -6,7 +6,8 @@
 **Lecturer:** Prof. Dr. Shahrulniza Musa  
 **Lab Assignment:** Lab 4 (Weeks 7–8) — Access Control & Network Security  
 **Course Learning Outcome:** CLO2 — Construct secure cloud operations that safeguard data integrity  
-**Environment User:** `fikri`  
+**Student Name:** `Siti Nurjannah binti Daud`  
+**Student ID:** `52215124446`  
 
 ---
 
@@ -80,10 +81,12 @@ Authenticated OK
 ```
 
 #### Evidence Artifacts:
-- 401 Unauthorized (No Creds): ![Task1-1](file:///c:/Users/fikri/Documents/Sem%206%20Short%20Sem/Cloud%20Computing/Lab4-Evidence/Task1.%20%20Authentication_a%20Password-Protected%20Service.PNG)
-- 200 OK (Valid Creds): ![Task1-2](file:///c:/Users/fikri/Documents/Sem%206%20Short%20Sem/Cloud%20Computing/Lab4-Evidence/Task1.%20Authentication_a%20Password-Protected%20Service.PNG)
+- 401 Unauthorized (No Creds):  
+ <img width="673" height="233" alt="Task1   Authentication_a Password-Protected Service" src="https://github.com/user-attachments/assets/995dfe6f-2539-40ca-bd34-e453bc62894c" />
 
----
+- 200 OK (Valid Creds):  
+ <img width="1242" height="479" alt="Task1  Authentication_a Password-Protected Service" src="https://github.com/user-attachments/assets/9e4bf70e-60be-4bcb-a9c5-7dcf2b3e1814" />
+
 
 ### Task 2: Add a Second Factor (MFA / TOTP)
 
@@ -113,7 +116,9 @@ MFA OK
 > MFA combines factors from different classes. It defeats the majority of credential attacks — the cheapest big security win.
 
 #### Evidence Artifact:
-- MFA Verification Success: ![Task2](file:///c:/Users/fikri/Documents/Sem%206%20Short%20Sem/Cloud%20Computing/Lab4-Evidence/Task2.%20Add%20a%20Second%20Factor.PNG)
+- MFA Verification Success:  
+ <img width="1242" height="479" alt="Task1  Authentication_a Password-Protected Service" src="https://github.com/user-attachments/assets/a6ebd6b7-dd64-4a56-a425-722bca236208" />
+
 
 ---
 
@@ -144,10 +149,9 @@ no
 no
 ```
 
-#### Evidence Artifact:
-- RBAC Verification (Allowed vs Denied): ![Task3](file:///c:/Users/fikri/Documents/Sem%206%20Short%20Sem/Cloud%20Computing/Lab4-Evidence/Task3.%20%20Authorization_RBAC%20Roles.PNG)
-
----
+#### Evidence Artifact:  
+- RBAC Verification (Allowed vs Denied):
+ <img width="1242" height="479" alt="Task1  Authentication_a Password-Protected Service" src="https://github.com/user-attachments/assets/8bac5244-1c60-42cc-a316-ea54d6b01e61" />
 
 ## Session B (Week 8): Network Security & Hardening
 
@@ -184,9 +188,10 @@ REACHABLE
 > The database is unreachable from the internet-facing tier. An attacker who compromises the web tier still cannot talk directly to the data — segmentation contains lateral movement.
 
 #### Evidence Artifacts:
-- Segmentation Block & Allow:
-  - ![Task4-1](file:///c:/Users/fikri/Documents/Sem%206%20Short%20Sem/Cloud%20Computing/Lab4-Evidence/Task4.%20%20Network%20Segmentation%20(Three-Tier).PNG)
-  - ![Task4-2](file:///c:/Users/fikri/Documents/Sem%206%20Short%20Sem/Cloud%20Computing/Lab4-Evidence/Task4.%20Network%20Segmentation%20(Three-Tier).PNG)
+- Segmentation Block & Allow:  
+ <img width="1897" height="367" alt="Task4   Network Segmentation (Three-Tier)" src="https://github.com/user-attachments/assets/b446da43-396a-4247-9635-d05e67b6838b" />  
+ <img width="667" height="531" alt="Task4  Network Segmentation (Three-Tier)" src="https://github.com/user-attachments/assets/cb4c7d58-4140-4c0d-9732-a9531bffeeca" />  
+
 
 ---
 
@@ -206,7 +211,8 @@ docker run --rm --cap-add=NET_ADMIN alpine sh -c '\
 ```
 
 #### Evidence Artifact:
-- Default-Deny Iptables Ruleset: ![Task5](file:///c:/Users/fikri/Documents/Sem%206%20Short%20Sem/Cloud%20Computing/Lab4-Evidence/Task5.%20Firewall%20Rules%20(Default-Deny).PNG)
+- Default-Deny Iptables Ruleset:  
+ <img width="612" height="190" alt="Task5  Firewall Rules (Default-Deny)" src="https://github.com/user-attachments/assets/cdd0d37f-e804-46ca-9191-44f9d96a3342" />  
 
 ---
 
@@ -240,11 +246,11 @@ User=1000:1000 ReadOnly=true
 
 #### Evidence Artifacts:
 - Container Inspect & Trivy Scans:
-  - ![Task6-1](file:///c:/Users/fikri/Documents/Sem%206%20Short%20Sem/Cloud%20Computing/Lab4-Evidence/Task6.%20Container_Host%20Hardening.PNG)
-  - ![Task6-2](file:///c:/Users/fikri/Documents/Sem%206%20Short%20Sem/Cloud%20Computing/Lab4-Evidence/Task6.%202Container_Host%20Hardening.PNG)
-  - ![Task6-3](file:///c:/Users/fikri/Documents/Sem%206%20Short%20Sem/Cloud%20Computing/Lab4-Evidence/Task6.%203Container_Host%20Hardening.PNG)
-  - ![Task6-4](file:///c:/Users/fikri/Documents/Sem%206%20Short%20Sem/Cloud%20Computing/Lab4-Evidence/Task6.%204Container_Host%20Hardening.PNG)
-  - ![Task6-5](file:///c:/Users/fikri/Documents/Sem%206%20Short%20Sem/Cloud%20Computing/Lab4-Evidence/Task6.%205Container_Host%20Hardening.PNG)
+ <img width="1898" height="786" alt="Task6  Container_Host Hardening" src="https://github.com/user-attachments/assets/413b0ba5-9c40-4dfc-b820-2016b8f7f7fd" />
+ <img width="1903" height="796" alt="Task6  2Container_Host Hardening" src="https://github.com/user-attachments/assets/e933f90c-3287-4f56-859c-9620a765c109" />
+ <img width="1897" height="793" alt="Task6  3Container_Host Hardening" src="https://github.com/user-attachments/assets/70468425-6cdc-4c33-a462-b2e98ecc9e51" />
+ <img width="1900" height="800" alt="Task6  4Container_Host Hardening" src="https://github.com/user-attachments/assets/4940131d-30ee-4d66-a1ae-f844b7603b59" />
+ <img width="1900" height="800" alt="Task6  4Container_Host Hardening" src="https://github.com/user-attachments/assets/08f98527-e053-49db-86f5-95469fdec3da" />  
 
 ---
 
@@ -298,8 +304,8 @@ docker inspect hardened --format '{{json .HostConfig.CapDrop}}'
 ```
 
 #### Evidence Artifact:
-- Verification Execution: ![3. Verification Command.PNG](file:///c:/Users/fikri/Documents/Sem%206%20Short%20Sem/Cloud%20Computing/Lab4-Evidence/3.%20Verification%20Command.PNG)
-
+- Verification Execution:  
+ <img width="536" height="336" alt="3  Verification Command" src="https://github.com/user-attachments/assets/a10b720f-f7c1-400f-ae4e-12816578a216" />  
 ---
 
 ### 4. Security Best-Practices Checklist
@@ -325,8 +331,8 @@ kind delete cluster --name ccse-lab4
 ```
 
 #### Evidence Artifact:
-- Cleanup Execution: ![CleanUp and TearDown.PNG](file:///c:/Users/fikri/Documents/Sem%206%20Short%20Sem/Cloud%20Computing/Lab4-Evidence/CleanUp%20and%20TearDown.PNG)
-
+- Cleanup Execution:  
+<img width="471" height="206" alt="CleanUp and TearDown" src="https://github.com/user-attachments/assets/0e35175c-c7ea-46be-86bc-b98d36a8dc76" />  
 ---
 
 ### 6. Expansion Ideas (Advanced Students)
@@ -337,4 +343,4 @@ kind delete cluster --name ccse-lab4
 - Turn the hardening steps into a **Dockerfile** with a distroless base image and rebuild.
 
 ---
-*Report compiled by Student `fikri` for IKB42603 Cloud Computing Security Essentials.*
+*Report compiled by Student `Siti Nurjannah binti Daud` for IKB42603 Cloud Computing Security Essentials.*
