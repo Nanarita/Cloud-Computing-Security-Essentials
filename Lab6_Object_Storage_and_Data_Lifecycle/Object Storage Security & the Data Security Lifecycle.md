@@ -6,7 +6,8 @@
 **Lecturer:** Prof. Dr. Shahrulniza Musa  
 **Lab Assignment:** Lab 6 (Weeks 11–12) — Object Storage Security & the Data Security Lifecycle  
 **Course Learning Outcome:** CLO2 — Construct secure cloud operations that safeguard data confidentiality and integrity (VBE3)  
-**Environment User:** `fikri`  
+**Student Name:** `Siti Nurjannah Binti Daud`  
+**Student ID:** `52215124446`  
 
 ---
 
@@ -125,10 +126,17 @@ aws $EP s3api get-object-tagging --bucket $BUCKET --key confidential/record.txt
 ```
 
 #### Evidence Artifacts:
-- Classification Output 1: ![1. Classify the data](file:///c:/Users/fikri/Documents/Sem%206%20Short%20Sem/Cloud%20Computing/Lab6-Evidence/1.%20Classify%20the%20data.PNG)
-- Classification Output 2: ![1. Classify the data2](file:///c:/Users/fikri/Documents/Sem%206%20Short%20Sem/Cloud%20Computing/Lab6-Evidence/1.%20Classify%20the%20data2.PNG)
-- Classification Output 3: ![1. Classify the data3](file:///c:/Users/fikri/Documents/Sem%206%20Short%20Sem/Cloud%20Computing/Lab6-Evidence/1.%20Classify%20the%20data3.PNG)
-- Classification Output 4: ![1. Classify the data4](file:///c:/Users/fikri/Documents/Sem%206%20Short%20Sem/Cloud%20Computing/Lab6-Evidence/1.%20Classify%20the%20data4.PNG)
+- Classification Output 1:  
+  <img width="412" height="81" alt="1  Classify the data" src="https://github.com/user-attachments/assets/37d76db3-e9ae-4ea0-8b8e-0dc958d98a76" />
+
+- Classification Output 2:  
+  <img width="665" height="147" alt="1  Classify the data2" src="https://github.com/user-attachments/assets/8d2ebef4-1083-4f5a-b595-a57096e3e41d" />
+
+- Classification Output 3:  
+  <img width="665" height="464" alt="1  Classify the data3" src="https://github.com/user-attachments/assets/e445fff3-ad17-4f17-b4dc-db35bf426a51" />
+
+- Classification Output 4:  
+  <img width="649" height="325" alt="1  Classify the data4" src="https://github.com/user-attachments/assets/0588d68a-485f-4122-a5d8-0b6805c17cd8" />
 
 ---
 
@@ -156,8 +164,11 @@ Patient: Ahmad bin Ali, Diagnosis: confidential
 > **Breach Confirmed**: Returning `HTTP 200` without any AWS credentials signifies a full data breach caused solely by the wildcard `"*"` Principal in the resource JSON policy.
 
 #### Evidence Artifacts:
-- Archetypal Breach Test: ![2. Reproduce the Archetypal Breach](file:///c:/Users/fikri/Documents/Sem%206%20Short%20Sem/Cloud%20Computing/Lab6-Evidence/2.%20Reproduce%20the%20Archetypal%20Breach.PNG)
-- Archetypal Breach Output: ![2. Reproduce the Archetypal Breach2](file:///c:/Users/fikri/Documents/Sem%206%20Short%20Sem/Cloud%20Computing/Lab6-Evidence/2.%20Reproduce%20the%20Archetypal%20Breach2.PNG)
+- Archetypal Breach Test:  
+  <img width="686" height="415" alt="2  Reproduce the Archetypal Breach" src="https://github.com/user-attachments/assets/d7bf1a34-7116-404b-a498-1a165f7bcd3f" />
+
+- Archetypal Breach Output:  
+  <img width="452" height="114" alt="2  Reproduce the Archetypal Breach2" src="https://github.com/user-attachments/assets/8f9e03aa-8889-47ce-a2f0-868fcc5218b9" />
 
 ---
 
@@ -204,8 +215,11 @@ anonymous read now: HTTP 403
 > (b) A preventative guardrail actively drops insecure configurations before they are applied, whereas a detective control only reports the misconfiguration after the bucket is already exposed, leaving a window of vulnerability.
 
 #### Evidence Artifacts:
-- Remediation Setup: ![3. Remediate with Block Public Access](file:///c:/Users/fikri/Documents/Sem%206%20Short%20Sem/Cloud%20Computing/Lab6-Evidence/3.%20Remediate%20with%20Block%20Public%20Access.PNG)
-- Remediation Verification: ![3. Remediate with Block Public Access2](file:///c:/Users/fikri/Documents/Sem%206%20Short%20Sem/Cloud%20Computing/Lab6-Evidence/3.%20Remediate%20with%20Block%20Public%20Access2.PNG)
+- Remediation Setup:  
+  <img width="686" height="415" alt="2  Reproduce the Archetypal Breach" src="https://github.com/user-attachments/assets/381a0b36-ad2c-414c-bce8-a5f040fa5141" />
+
+- Remediation Verification:  
+  <img width="1754" height="450" alt="3  Remediate with Block Public Access2" src="https://github.com/user-attachments/assets/ec7e5cab-6cbc-445d-b161-b55fc4da73c5" />
 
 ---
 
@@ -248,11 +262,11 @@ confidential: DENIED
 > - `confidential/record.txt` was denied because the resource policy's explicit `Deny` strictly overrides the IAM policy's `Allow`.
 
 #### Evidence Artifacts:
-- Identity vs. Resource Policy Tests:
-  - ![4. Identity Policy vs Resource Policy](file:///c:/Users/fikri/Documents/Sem%206%20Short%20Sem/Cloud%20Computing/Lab6-Evidence/4.%20Identity%20Policy%20vs%20Resource%20Policy.PNG)
-  - ![4. Identity Policy vs Resource Policy2](file:///c:/Users/fikri/Documents/Sem%206%20Short%20Sem/Cloud%20Computing/Lab6-Evidence/4.%20Identity%20Policy%20vs%20Resource%20Policy2.PNG)
-  - ![4. Identity Policy vs Resource Policy3](file:///c:/Users/fikri/Documents/Sem%206%20Short%20Sem/Cloud%20Computing/Lab6-Evidence/4.%20Identity%20Policy%20vs%20Resource%20Policy3.PNG)
-  - ![4. Identity Policy vs Resource Policy4](file:///c:/Users/fikri/Documents/Sem%206%20Short%20Sem/Cloud%20Computing/Lab6-Evidence/4.%20Identity%20Policy%20vs%20Resource%20Policy4.PNG)
+- Identity vs. Resource Policy Tests:  
+  <img width="706" height="573" alt="4  Identity Policy vs Resource Policy" src="https://github.com/user-attachments/assets/b7e09e70-5c27-4ccb-b0d1-57b522903138" />  
+  <img width="764" height="364" alt="4  Identity Policy vs Resource Policy2" src="https://github.com/user-attachments/assets/9af603bd-8aa7-470b-b0be-048216552d41" />  
+  <img width="764" height="364" alt="4  Identity Policy vs Resource Policy2" src="https://github.com/user-attachments/assets/6bb7cc74-d380-4545-bb77-f46039951187" />  
+  <img width="598" height="251" alt="4  Identity Policy vs Resource Policy4" src="https://github.com/user-attachments/assets/c553c8a2-d4ce-4d32-a0fe-5e7a705ac5e1" />  
 
 ---
 
@@ -278,9 +292,10 @@ aws:kms	arn:aws:kms:us-east-1:000000000000:key/1234abcd-12ab-34cd-56ef-123456789
 ```
 
 #### Evidence Artifacts:
-- SSE-KMS Application & Verification:
-  - ![5. Default Encryption at Rest (SSE-KMS)](file:///c:/Users/fikri/Documents/Sem%206%20Short%20Sem/Cloud%20Computing/Lab6-Evidence/5.%20Default%20Encryption%20at%20Rest%20(SSE-KMS).PNG)
-  - ![5. Default Encryption at Rest (SSE-KMS)2](file:///c:/Users/fikri/Documents/Sem%206%20Short%20Sem/Cloud%20Computing/Lab6-Evidence/5.%20Default%20Encryption%20at%20Rest%20(SSE-KMS)2.PNG)
+- SSE-KMS Application & Verification:  
+  <img width="681" height="509" alt="5  Default Encryption at Rest (SSE-KMS)" src="https://github.com/user-attachments/assets/1113e647-06c4-4a43-81ac-4139d3f4bcc5" />  
+
+  <img width="834" height="214" alt="5  Default Encryption at Rest (SSE-KMS)2" src="https://github.com/user-attachments/assets/32a79431-280a-4133-a33d-7f245353ced6" />  
 
 ---
 
@@ -313,11 +328,11 @@ An error occurred (AccessDenied) when calling the ListObjectsV2 operation: Acces
 > - The condition key `aws:SecureTransport` must be evaluated against the current runtime environment. Because LocalStack uses plain HTTP (not HTTPS), the condition evaluated to false, mistakenly denying legitimate requests and locking out the bucket owner.
 
 #### Evidence Artifacts:
-- Presigned URL Generation & Condition-Key Testing:
-  - ![6. Delegated Access and the Condition-Key Trap](file:///c:/Users/fikri/Documents/Sem%206%20Short%20Sem/Cloud%20Computing/Lab6-Evidence/6.%20Delegated%20Access%20and%20the%20Condition-Key%20Trap.PNG)
-  - ![6. Delegated Access and the Condition-Key Trap2](file:///c:/Users/fikri/Documents/Sem%206%20Short%20Sem/Cloud%20Computing/Lab6-Evidence/6.%20Delegated%20Access%20and%20the%20Condition-Key%20Trap2.PNG)
-  - ![6. Delegated Access and the Condition-Key Trap3](file:///c:/Users/fikri/Documents/Sem%206%20Short%20Sem/Cloud%20Computing/Lab6-Evidence/6.%20Delegated%20Access%20and%20the%20Condition-Key%20Trap3.PNG)
-  - ![6. Delegated Access and the Condition-Key Trap4](file:///c:/Users/fikri/Documents/Sem%206%20Short%20Sem/Cloud%20Computing/Lab6-Evidence/6.%20Delegated%20Access%20and%20the%20Condition-Key%20Trap4.PNG)
+- Presigned URL Generation & Condition-Key Testing:  
+  <img width="1913" height="253" alt="6  Delegated Access and the Condition-Key Trap" src="https://github.com/user-attachments/assets/ef0ab088-f901-4b73-ad3e-5c4d6e72e56e" />  
+  <img width="722" height="253" alt="6  Delegated Access and the Condition-Key Trap2" src="https://github.com/user-attachments/assets/e328ac58-0f90-4a51-ac31-0f741f274f0e" />  
+  <img width="502" height="588" alt="6  Delegated Access and the Condition-Key Trap3" src="https://github.com/user-attachments/assets/0fae69cf-7247-485b-8612-ee890e8d003f" />  
+  <img width="490" height="45" alt="6  Delegated Access and the Condition-Key Trap4" src="https://github.com/user-attachments/assets/ee3e6019-a40e-44e1-9b08-158d8e21e201" />  
 
 ---
 
@@ -350,9 +365,10 @@ Patient: Ahmad bin Ali, Diagnosis: confidential
 ```
 
 #### Evidence Artifacts:
-- Data Remanence & Deletion Recovery:
-  - ![7. Versioning, Delete Markers & Data Remanence](file:///c:/Users/fikri/Documents/Sem%206%20Short%20Sem/Cloud%20Computing/Lab6-Evidence/7.%20Versioning,%20Delete%20Markers%20&%20Data%20Remanence.PNG)
-  - ![7. Versioning, Delete Markers & Data Remanence2](file:///c:/Users/fikri/Documents/Sem%206%20Short%20Sem/Cloud%20Computing/Lab6-Evidence/7.%20Versioning,%20Delete%20Markers%20&%20Data%20Remanence2.PNG)
+- Data Remanence & Deletion Recovery:  
+  <img width="640" height="540" alt="7  Versioning, Delete Markers   Data Remanence" src="https://github.com/user-attachments/assets/248cbbb5-a45a-4b0b-b6e2-3309bf64bace" />  
+
+  <img width="942" height="621" alt="7  Versioning, Delete Markers   Data Remanence2" src="https://github.com/user-attachments/assets/855422d5-2463-442a-b142-1891ab8f1dce" />  
 
 ---
 
@@ -383,9 +399,10 @@ An error occurred (KMS.DisabledException) when calling the GetObject operation: 
 > Cryptographic erasure gives auditors stronger assurance than magnetic overwriting because destroying the KMS DEK instantly renders all ciphertext versions (including snapshots and cross-region replicas) mathematically unrecoverable. In public clouds where tenants lack physical media access, this is the only verifiable way to permanently destroy data.
 
 #### Evidence Artifacts:
-- Lifecycle Configuration & Cryptographic Erasure:
-  - ![8. Lifecycle, Retention & Cryptographic Erasure](file:///c:/Users/fikri/Documents/Sem%206%20Short%20Sem/Cloud%20Computing/Lab6-Evidence/8.%20Lifecycle,%20Retention%20&%20Cryptographic%20Erasure.PNG)
-  - ![8. Lifecycle, Retention & Cryptographic Erasure2](file:///c:/Users/fikri/Documents/Sem%206%20Short%20Sem/Cloud%20Computing/Lab6-Evidence/8.%20Lifecycle,%20Retention%20&%20Cryptographic%20Erasure2.PNG)
+- Lifecycle Configuration & Cryptographic Erasure:  
+  <img width="600" height="504" alt="8  Lifecycle, Retention   Cryptographic Erasure" src="https://github.com/user-attachments/assets/3a01b749-4df6-42d6-b05f-4449df42e664" />  
+  <img width="861" height="588" alt="8  Lifecycle, Retention   Cryptographic Erasure2" src="https://github.com/user-attachments/assets/ee28685a-8993-4c11-8e43-cc357d21219b" />  
+
 
 ---
 
@@ -463,7 +480,8 @@ aws $EP kms describe-key --key-id $KEY_ID --query 'KeyMetadata.KeyState' --outpu
 ```
 
 #### Evidence Artifact:
-- Final Verification Output: ![Verification Command.PNG](file:///c:/Users/fikri/Documents/Sem%206%20Short%20Sem/Cloud%20Computing/Lab6-Evidence/Verification%20Command.PNG)
+- Final Verification Output:  
+  <img width="1040" height="510" alt="Verification Command" src="https://github.com/user-attachments/assets/93047463-2637-40b6-8d1e-99712ba46cbc" />  
 
 ---
 
@@ -501,9 +519,9 @@ rm -f *.json *.txt
 ```
 
 #### Evidence Artifacts:
-- Cleanup Execution: 
-  - ![Cleanup and Teardown.PNG](file:///c:/Users/fikri/Documents/Sem%206%20Short%20Sem/Cloud%20Computing/Lab6-Evidence/Cleanup%20and%20Teardown.PNG)
-  - ![Cleanup and Teardown2.PNG](file:///c:/Users/fikri/Documents/Sem%206%20Short%20Sem/Cloud%20Computing/Lab6-Evidence/Cleanup%20and%20Teardown2.PNG)
+- Cleanup Execution:  
+  <img width="647" height="705" alt="Cleanup and Teardown" src="https://github.com/user-attachments/assets/f3f1d843-91d8-4aa0-9c7f-3f091a9f8bcc" />  
+  <img width="676" height="491" alt="Cleanup and Teardown2" src="https://github.com/user-attachments/assets/6fa994cc-a945-4908-95ea-6d816d3d913b" />  
 
 ---
 
@@ -515,4 +533,4 @@ rm -f *.json *.txt
 - **Client-side encryption**: Encrypt an object with OpenSSL before upload and compare the threat model against SSE-KMS.
 
 ---
-*Report compiled by Student `fikri` for IKB42603 Cloud Computing Security Essentials.*
+*Report compiled by Student `Siti Nurjannah binti Daud` for IKB42603 Cloud Computing Security Essentials.*
